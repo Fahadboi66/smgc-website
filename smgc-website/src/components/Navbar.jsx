@@ -54,14 +54,14 @@ export default function Navbar({ activeSection }) {
       ].join(' ')}
     >
       <nav
-        className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between"
+        className="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between"
         aria-label="Main navigation"
       >
         {/* Logo */}
         <a
           href="#home"
           onClick={(e) => { e.preventDefault(); scrollToSection('#home') }}
-          className="flex items-center gap-2.5 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded"
+          className="flex items-center shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded"
           aria-label="S&M Global Chemicals — home"
         >
           <LogoMark />
@@ -163,9 +163,9 @@ export default function Navbar({ activeSection }) {
 /* Inline logo mark — hexagonal ring with capsule */
 function LogoMark() {
   return (
-    <div className="w-9 h-9 shrink-0">
+    <div className="w-20 h-20 shrink-0 mt-3">
       <img
-        src="/logo.png"
+        src="/favicon.png"
         alt="S&M Global Chemicals logo"
         className="w-full h-full object-contain"
         onError={(e) => {
