@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Brand CSS Custom Properties ── */
+:root {
+  --navy-950: #060e1e;
+  --navy-900: #0a1628;
+  --navy-800: #0f2044;
+  --navy-700: #1a3260;
+  --cyan-400: #38bdf8;
+  --cyan-300: #7dd3fc;
+  --border-rest: rgba(56, 189, 248, 0.15);
+  --border-hover: rgba(56, 189, 248, 0.55);
+}
+
+/* ── Global Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--navy-950);
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── Focus Visible ── */
+:focus-visible {
+  outline: 2px solid var(--cyan-400);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Scrollbar Styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--navy-950);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--navy-700);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan-400);
+}
+
+/* ── Marquee ── */
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Float (used by hero particles + globe) ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes globe-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+/* ── Pulse glow (WhatsApp FAB) ── */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50%       { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-pulse {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
+/* ── Section base ── */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Utility: text gradient ── */
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #38bdf8 0%, #7dd3fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Card border glow on hover ── */
+.card-border {
+  border: 1px solid var(--border-rest);
+  transition: border-color 0.3s ease;
+}
+.card-border:hover {
+  border-color: var(--border-hover);
+}
+
+/* ── Hex pattern background ── */
+.hex-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50V18L28 2l28 16v32L28 66zm0-18L8 36V20l20-12 20 12v16L28 48z' fill='none' stroke='%2338bdf8' stroke-width='0.4' stroke-opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* ── Mobile overflow safety ── */
+img, svg, video {
+  max-width: 100%;
+}
+
+/* ── Tailwind border-white/8 workaround ── */
+.border-white\/8 {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Touch target minimum ── */
+button, a[href] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Exceptions for inline text links that shouldn't force height */
+nav a, footer a, .inline-link {
+  min-height: unset;
+  min-width: unset;
+}
+
+/* ── Premium Card System ─────────────────────────────────────────────────
+   Cards use a layered approach:
+   1. Base: solid dark surface with sharp border
+   2. Inner top-edge highlight: 1px line of subtle light
+   3. Hover: surface lightens + top-edge glow activates + shadow deepens
+   4. Active glow: very soft box-shadow, not a blur blob
+──────────────────────────────────────────────────────────────────────── */
+
+.card-premium {
+  position: relative;
+  background: linear-gradient(160deg, #0e1f3d 0%, #0a1628 100%);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  box-shadow:
+    0 1px 0 0 rgba(56, 189, 248, 0.06) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.4) inset,
+    0 4px 24px rgba(0, 0, 0, 0.35),
+    0 1px 3px rgba(0, 0, 0, 0.5);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.card-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    160deg,
+    rgba(56, 189, 248, 0.04) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.card-premium:hover {
+  border-color: rgba(56, 189, 248, 0.28);
+  background: linear-gradient(160deg, #122448 0%, #0d1e3a 100%);
+  box-shadow:
+    0 1px 0 0 rgba(56, 189, 248, 0.14) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.5) inset,
+    0 8px 40px rgba(0, 0, 0, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(56, 189, 248, 0.08);
+  transform: translateY(-5px);
+}
+
+.card-premium:hover::before {
+  opacity: 1;
+}
+
+/* Icon container inside cards */
+.card-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: rgba(56, 189, 248, 0.07);
+  border: 1px solid rgba(56, 189, 248, 0.14);
+  border-radius: 10px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.card-premium:hover .card-icon-wrap {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* Number label inside cards */
+.card-number-label {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: rgba(56, 189, 248, 0.18);
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s ease;
+  select: none;
+}
+
+.card-premium:hover .card-number-label {
+  color: rgba(56, 189, 248, 0.38);
+}
+
+/* Top accent line that grows on hover */
+.card-top-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.5), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 2px 2px 0 0;
+}
+
+.card-premium:hover .card-top-line {
+  transform: scaleX(1);
+}
+
+/* ── Scroll-reveal animation base states ─────────────────────────────── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}

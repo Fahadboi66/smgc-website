@@ -1,0 +1,5 @@
+Place the S&M Global Chemicals logo image here as:
+  /public/logo.png
+
+The navbar and footer will automatically use it.
+If logo.png is not found, an inline SVG fallback capsule icon is shown instead.
