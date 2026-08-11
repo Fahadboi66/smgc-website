@@ -150,8 +150,8 @@ function HeroBackground() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          opacity: 0.32,
-          mixBlendMode: 'luminosity',
+          opacity: 0.55,
+          mixBlendMode: 'screen',
         }}
       />
 
