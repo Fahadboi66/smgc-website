@@ -42,7 +42,7 @@ export default function Services() {
             viewport={viewport} transition={t(0.16)}
           >
             From identifying international sources to coordinating procurement,
-            documentation, logistics, and delivery, S&amp;M Global Chemicals provides
+            documentation, logistics, and delivery, S&amp;M Global Chemicals Pvt. Ltd. provides
             end-to-end sourcing and supply solutions for pharmaceutical manufacturers
             and businesses in Pakistan.
           </motion.p>

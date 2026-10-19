@@ -57,7 +57,7 @@ export default function Hero() {
               variants={reduced ? {} : staggerItem}
               className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-[540px]"
             >
-              S&amp;M Global Chemicals sources and supplies APIs, excipients,
+              S&amp;M Global Chemicals Pvt. Ltd. sources and supplies APIs, excipients,
               pharmaceutical intermediates, and specialty chemicals from international
               suppliers to pharmaceutical manufacturers and businesses across Pakistan.
             </motion.p>

@@ -62,12 +62,12 @@ export default function Navbar({ activeSection }) {
           href="#home"
           onClick={(e) => { e.preventDefault(); scrollToSection('#home') }}
           className="flex items-center shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded"
-          aria-label="S&M Global Chemicals — home"
+          aria-label="S&M Global Chemicals Pvt. Ltd. — home"
         >
           <LogoMark />
-          <span className="text-white font-semibold text-sm tracking-wide hidden sm:block leading-tight">
-            S&amp;M Global<br />
-            <span className="text-cyan-400 text-xs font-medium tracking-widest uppercase">Chemicals</span>
+          <span className="hidden sm:block leading-tight">
+            <span className="text-white font-semibold text-xs tracking-wide">S&amp;M Global Chemicals</span><br />
+            <span className="text-cyan-400 text-[10px] font-medium tracking-widest uppercase">Pvt. Ltd.</span>
           </span>
         </a>
 
@@ -166,7 +166,7 @@ function LogoMark() {
     <div className="w-20 h-20 shrink-0 mt-3">
       <img
         src="/favicon.png"
-        alt="S&M Global Chemicals logo"
+        alt="S&M Global Chemicals Pvt. Ltd. logo"
         className="w-full h-full object-contain"
         onError={(e) => {
           // Fallback to SVG icon if logo not found

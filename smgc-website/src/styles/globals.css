@@ -96,6 +96,16 @@ body {
   animation: pulse-glow 2.5s ease-in-out infinite;
 }
 
+/* ── Pulse glow (WeChat FAB) ── */
+@keyframes wechat-pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(9, 187, 7, 0.5); }
+  50%       { box-shadow: 0 0 0 12px rgba(9, 187, 7, 0); }
+}
+
+.wechat-pulse {
+  animation: wechat-pulse-glow 2.5s ease-in-out infinite;
+}
+
 /* ── Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

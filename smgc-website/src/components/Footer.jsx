@@ -122,7 +122,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-14 pt-6 border-t border-navy-800 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-600 text-xs">
-            &copy; 2026 S&amp;M Global Chemicals. All rights reserved.
+            &copy; 2026 S&amp;M Global Chemicals Pvt. Ltd. All rights reserved.
           </p>
           <p className="text-gray-700 text-xs">
             Pharmaceutical &amp; Specialty Chemical Sourcing
@@ -139,12 +139,12 @@ function FooterLogo() {
       href="#home"
       onClick={(e) => { e.preventDefault(); scrollTo('#home') }}
       className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded w-fit"
-      aria-label="S&M Global Chemicals — back to top"
+      aria-label="S&M Global Chemicals Pvt. Ltd. — back to top"
     >
       <div className="w-9 h-9 shrink-0">
         <img
           src="/logo.png"
-          alt="S&M Global Chemicals logo"
+          alt="S&M Global Chemicals Pvt. Ltd. logo"
           className="w-full h-full object-contain"
           onError={(e) => {
             e.currentTarget.style.display = 'none'
@@ -164,7 +164,7 @@ function FooterLogo() {
       </div>
       <div>
         <span className="text-white text-sm font-semibold leading-tight block">
-          S&amp;M Global Chemicals
+          S&amp;M Global Chemicals Pvt. Ltd.
         </span>
         <span className="text-gray-600 text-[10px] tracking-widest uppercase">
           Sourcing &amp; Supply

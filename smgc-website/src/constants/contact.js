@@ -7,3 +7,6 @@ export const EMAIL_ADDRESS = import.meta.env.VITE_EMAIL_ADDRESS
 
 /** WhatsApp number in international format WITHOUT + or spaces, e.g. 923001234567 */
 export const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER
+
+/** WeChat ID or phone number used in the weixin:// deep-link */
+export const WECHAT_ID = import.meta.env.VITE_WECHAT_ID

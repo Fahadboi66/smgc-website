@@ -59,7 +59,7 @@ export default function About() {
             variants={v(fadeUp)} initial="hidden" whileInView="visible"
             viewport={viewport} transition={t(0.16)}
           >
-            S&amp;M Global Chemicals connects pharmaceutical and chemical businesses in
+            S&amp;M Global Chemicals Pvt. Ltd. connects pharmaceutical and chemical businesses in
             Pakistan with reliable international sources and supply solutions.
           </motion.p>
         </div>
