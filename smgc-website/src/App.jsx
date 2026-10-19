@@ -8,6 +8,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import FloatingWhatsApp from './components/FloatingWhatsApp'
 import FloatingWeChat from './components/FloatingWeChat'
+import FloatingEmail from './components/FloatingEmail'
 import { useScrollSpy } from './hooks/useScrollSpy'
 
 // Each component owns its own section id anchor for scroll-spy
@@ -41,6 +42,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <FloatingEmail />
       <FloatingWeChat />
       <FloatingWhatsApp />
     </>
