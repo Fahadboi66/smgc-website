@@ -106,16 +106,6 @@ body {
   animation: wechat-pulse-glow 2.5s ease-in-out infinite;
 }
 
-/* ── Pulse glow (Email FAB) ── */
-@keyframes email-pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.5); }
-  50%       { box-shadow: 0 0 0 12px rgba(56, 189, 248, 0); }
-}
-
-.email-pulse {
-  animation: email-pulse-glow 2.5s ease-in-out infinite;
-}
-
 /* ── Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
